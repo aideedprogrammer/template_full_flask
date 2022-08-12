@@ -1,7 +1,8 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 import os
-import proj.config
+from proj import config
+# import proj.config
 from flask_cors import CORS
 # from proj.models import db
 # from proj import model
