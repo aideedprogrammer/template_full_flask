@@ -27,3 +27,12 @@ class UserTestCase(unittest.TestCase):
         # assert user.age == "ff"
 
         assert response.status_code == 200
+
+    def test_call_user_my(self):
+        response = self.client.get('/user/list')
+
+        # user = User.query.filter_by(age="ff").first()
+        #
+        # assert user.age == "ff"
+
+        assert response.status_code == 200
