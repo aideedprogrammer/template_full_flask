@@ -26,9 +26,9 @@ def intial_app(config_name='development'):
     app.register_blueprint(bp_user, url_prefix='/user')
 
     with app.app_context():
-        pass
+        # pass
         # db.drop_all()
-        # db.create_all()
+        db.create_all()
 
     return app
 

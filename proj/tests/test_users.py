@@ -22,9 +22,9 @@ class UserTestCase(unittest.TestCase):
     def test_call_user(self):
         response = self.client.get('/user/list')
 
-        # user = User.query.filter_by(age="ff").first()
+        user = User.query.filter_by(age="ff").first()
         #
-        # assert user.age == "ff"
+        assert user.age == "ff"
 
         assert response.status_code == 200
 

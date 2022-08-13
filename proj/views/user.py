@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, make_response,jsonify
 import sys, os, json
-# from proj.models.model import *
+from proj.models.model import *
 
 bp_user = Blueprint('bp_user', __name__)
 
@@ -10,9 +10,9 @@ def list():
     data = []
 
     try:
-        # use = User(name="SS",age="ff",date_birth=None,gender="SSS")
-        # db.session.add(use)
-        # db.session.commit()
+        use = User(name="SS",age="ff",date_birth=None,gender="SSS")
+        db.session.add(use)
+        db.session.commit()
         item = dict()
         item['name'] = "Zulkamaluddin Bin Pakharuddin"
         item['age'] = "ff"
