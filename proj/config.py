@@ -19,7 +19,7 @@ class DevelopmentConfig(BaseConfig):
 
 
 class TestingConfig(BaseConfig):
-    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:%s@localhost:3306/flask_new_testing1' % quote('P@ssw0rd123')
+    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://developer:%s@localhost:3306/flask_new_testing1' % quote('P@ssw0rd123')
     TESTING = True
     WTF_CSRF_ENABLED = False
     PRESERVE_CONTEXT_ON_EXCEPTION = False
