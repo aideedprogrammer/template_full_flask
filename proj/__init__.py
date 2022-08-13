@@ -4,7 +4,7 @@ import os
 from proj import config
 # import proj.config
 from flask_cors import CORS
-# from proj.models import db
+from proj.models import db
 # from proj import model
 
 
@@ -20,7 +20,7 @@ def intial_app(config_name='development'):
     app.config.from_object(config.config_setting[config_name])  # object-based default configuration
     app.config.from_pyfile('flask.cfg', silent=True)  # instance-folders configuration
 
-    # db.init_app(app)
+    db.init_app(app)
 
     from proj.views.user import bp_user
     app.register_blueprint(bp_user, url_prefix='/user')
