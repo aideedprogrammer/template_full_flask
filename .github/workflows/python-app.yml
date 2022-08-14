@@ -47,6 +47,12 @@ jobs:
         mysql user: 'developer' # Required if "mysql root password" is empty, default is empty. The superuser for the specified database. Can use secrets, too
         mysql password: 'P@ssw0rd123' # Requi
 
+        run: |  
+          mysql -u root -p
+          P@ssw0rd123
+          show databases;
+          
+
     - name: Okey ke?
       run: |
         echo Hello Awak samamamama
