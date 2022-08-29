@@ -11,6 +11,7 @@ class User(db.Model):
     gender = db.Column(db.String(50))
 
     def __init__(self, name, age, date_birth, gender):
+        # self.uuid = uuid.uuid4().hex if uuid != None else uuid
         self.uuid = uuid.uuid4().hex
         self.name = name
         self.age = age
