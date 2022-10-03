@@ -3,7 +3,7 @@ import unittest
 import pytest
 
 from .. import intial_app
-from proj.models.model import *
+from proj.views.user import *
 import time
 
 
@@ -26,12 +26,13 @@ class UserTestCase(unittest.TestCase):
         self.app = None
         self.client = None
 
-    def unit_test_calculate(self):
-        pass
+    @pytest.mark.unittest
+    def test_unit_calculate(self):
+        assert calculatePeople() == 7
 
     @pytest.mark.order(1)
     @pytest.mark.integtest
-    def test_call_add(self):
+    def test_integration_add(self):
         data={"data": json.dumps(
                 {
                     "name": "Zulkamaluddin Bin Pakharuddin",
@@ -48,7 +49,7 @@ class UserTestCase(unittest.TestCase):
         assert response.status_code == 200
 
     @pytest.mark.order(2)
-    def test_call_update(self):
+    def test_integration_update(self):
         data={"data": json.dumps(
                 {
                     "previous_name": "Zulkamaluddin Bin Pakharuddin",
@@ -67,7 +68,7 @@ class UserTestCase(unittest.TestCase):
 
     @pytest.mark.order(3)
     @pytest.mark.slow
-    def test_call_list(self):
+    def test_integration_list(self):
         response = self.client.get('/user/list')
         datas = json.loads(response.text)['data']
         
@@ -78,7 +79,7 @@ class UserTestCase(unittest.TestCase):
         assert response.status_code == 200
 
     @pytest.mark.order(4)
-    def test_call_delete(self):
+    def test_integration_delete(self):
         data={"data": json.dumps(
                 {
                     "name": "Iqbal Aideed"

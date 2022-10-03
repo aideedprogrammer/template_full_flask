@@ -119,10 +119,7 @@ def delete():
 
         user = User.query.filter_by(name=items['name']).first()
         if user:
-            # print("@##############")
             db.session.delete(user)
-        # else:
-            # print("()()()()()()()()()()(0")
 
     except:
         exc_type, exc_obj, exc_tb = sys.exc_info()
@@ -139,3 +136,8 @@ def delete():
         db.session.commit()
 
         return jsonify(response)
+
+
+def calculatePeople():
+    total = 5 + 2
+    return total
